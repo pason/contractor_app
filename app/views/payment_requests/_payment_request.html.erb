@@ -1,0 +1,17 @@
+<tr id="<%= dom_id payment_request %>">
+  <td>
+    <%= number_to_currency(payment_request.amount,
+                           unit: Money::Currency.new(payment_request.currency_code).symbol)  %>
+  </td>
+  <td>
+    <%= payment_request.description.truncate(25, omission: '...') %>
+  </td>
+  <td>
+    <%= payment_request.created_at.to_s(:long) %>
+  </td>
+  <td>
+    <i>
+      <%= payment_request.status %>
+    </i>
+  </td>
+</tr>

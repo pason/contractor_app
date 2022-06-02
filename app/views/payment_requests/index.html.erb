@@ -1,0 +1,19 @@
+<p style="color: green"><%= notice %></p>
+
+<h2>Payment requests</h2>
+<%= link_to "New payment request", new_payment_request_path %>
+
+<table id="payment_requests">
+  <tr>
+    <th>Amount</th>
+    <th>Description</th>
+    <th>Requested At</th>
+    <th>Status</th>
+  </tr>
+
+  <% @payment_requests.each do |payment_request| %>
+    <%= render payment_request %>
+  <% end %>
+</table>
+
+
