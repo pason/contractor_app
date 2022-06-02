@@ -7,5 +7,6 @@ class PaymentRequestCreatedWorker
 
   def work(msg)
     puts "received msg: #{msg.inspect}"
+    ack!
   end
 end
