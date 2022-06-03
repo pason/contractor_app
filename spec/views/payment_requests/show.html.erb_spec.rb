@@ -1,17 +1,15 @@
 require 'rails_helper'
 
-RSpec.describe "payment_requests/show", type: :view do
+RSpec.describe 'payment_requests/show', type: :view do
   before(:each) do
     @payment_request = assign(:payment_request, PaymentRequest.create!(
-      amount: "9.99",
-      8: "8",
-      2: "2",
-      currency_iso: "Currency Iso",
-      description: "MyText"
-    ))
+                                                  amount: '9.99',
+                                                  currency_iso: 'Currency Iso',
+                                                  description: 'MyText'
+                                                ))
   end
 
-  it "renders attributes in <p>" do
+  it 'renders attributes in <p>' do
     render
     expect(rendered).to match(/9.99/)
     expect(rendered).to match(/8/)

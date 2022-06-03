@@ -19,7 +19,7 @@ ActiveRecord::Schema[7.0].define(version: 20_220_602_143_925) do
     t.uuid 'payment_request_id', null: false
     t.string 'event_type', null: false
     t.json 'payload'
-    t.uuid 'external_id'
+    t.uuid 'message_id', default: -> { 'gen_random_uuid()' }
     t.datetime 'created_at', null: false
     t.datetime 'updated_at', null: false
     t.index ['payment_request_id'], name: 'index_payment_request_events_on_payment_request_id'

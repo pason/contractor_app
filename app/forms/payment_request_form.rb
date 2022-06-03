@@ -19,7 +19,7 @@ class PaymentRequestForm
 
     ActiveRecord::Base.transaction do
       payment_request.assign_attributes(payment_request_attributes)
-      event.assign_attributes(payment_request: payment_request, payload: event_payload)
+      event.assign_attributes(payment_request:, payload: payment_request_attributes)
       payment_request.save!
       event.save!
       event.publish!
@@ -27,6 +27,7 @@ class PaymentRequestForm
   rescue ActiveRecord::RecordNotSaved, ActiveRecord::RecordInvalid
     false
   rescue Bunny::Exception => e
+    # Log notification to App Monitor tool
     Rails.logger.error "Error: #{e}\n#{Kernel.caller.join("\n")}"
     false
   end
@@ -39,9 +40,5 @@ class PaymentRequestForm
       currency_code: currency_code.presence,
       description: description.presence
     }
-  end
-
-  def event_payload
-    payment_request_attributes.merge({ external_id: payment_request.id })
   end
 end

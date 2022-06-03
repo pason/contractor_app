@@ -2,7 +2,7 @@ module Publishable
   extend ActiveSupport::Concern
 
   def publish!
-    Amqp.publish(event: self)
+    amqp.publish(event: self)
   end
 
   def routing_key
@@ -13,5 +13,11 @@ module Publishable
     def routing_key(routing_key)
       @routing_key = routing_key
     end
+  end
+
+  private
+
+  def ampq
+    @amqp ||= Amqp
   end
 end
