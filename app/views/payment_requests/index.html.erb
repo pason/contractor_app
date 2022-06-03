@@ -12,7 +12,7 @@
   </tr>
 
   <% @payment_requests.each do |payment_request| %>
-    <%= render payment_request %>
+    <%= render partial: 'payment_request', locals: { payment_request: payment_request } %>
   <% end %>
 </table>
 

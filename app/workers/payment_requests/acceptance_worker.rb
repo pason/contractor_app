@@ -9,10 +9,11 @@ module PaymentRequests
     def work_with_params(_msg, _delivery_info, metadata)
       message_id = metadata[:message_id]
       event = Events::PaymentRequestEvent.find(message_id)
-      payment_request = event.payment_request
+      payment_request_record = event.payment_request_record
 
       ActiveRecord::Base.transaction do
-        Events::PaymentRequest::Accepted.create!(payment_request:, message_id:)
+        Events::PaymentRequest::Accepted.create!(payment_request_record: payment_request_record,
+                                                 message_id: message_id)
         payment_request.accepted!
       end
 

@@ -17,7 +17,7 @@ module Publishable
 
   private
 
-  def ampq
+  def amqp
     @amqp ||= Amqp
   end
 end

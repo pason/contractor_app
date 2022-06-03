@@ -1,4 +1,4 @@
-class PaymentRequest < ApplicationRecord
+class PaymentRequestRecord < ApplicationRecord
   validates :amount, presence: true, numericality: { greater_than: 0, less_than: 1_000_000 }
   validates :currency_code, presence: true
   validates :description, presence: true

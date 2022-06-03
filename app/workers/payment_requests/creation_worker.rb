@@ -11,12 +11,12 @@ module PaymentRequests
       payload = ActiveSupport::JSON.decode(msg)
 
       event = Events::PaymentRequest::Created.new
-      payment_request_record = PaymentRequest.new
+      payment_request_record = PaymentRequestRecord.new
 
       ActiveRecord::Base.transaction do
-        event.assign_attributes(payload:,
-                                message_id:,
-                                payment_request: payment_request_record)
+        event.assign_attributes(payload: payload,
+                                message_id: message_id,
+                                payment_request_record: payment_request_record)
 
         payment_request_record.assign_attributes(payload)
 

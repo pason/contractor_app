@@ -2,7 +2,7 @@ class PaymentRequestsController < ApplicationController
   before_action :set_payment_request_form, only: %i[new create]
 
   def index
-    @payment_requests = PaymentRequest.all
+    @payment_requests = PaymentRequestRecord.all
   end
 
   def new; end

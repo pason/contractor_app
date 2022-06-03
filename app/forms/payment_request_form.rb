@@ -2,14 +2,14 @@ class PaymentRequestForm
   include ActiveModel::Model
 
   attr_accessor :amount, :currency_code, :description
-  attr_reader :payment_request, :event
+  attr_reader :payment_request_record, :event
 
   validates :amount, presence: true, numericality: { greater_than: 0, less_than: 1_000_000 }
   validates :currency_code, presence: true
   validates :description, presence: true
 
   def initialize
-    @payment_request = PaymentRequest.new
+    @payment_request_record = PaymentRequestRecord.new
     @event = Events::PaymentRequest::Created.new
   end
 
@@ -18,9 +18,9 @@ class PaymentRequestForm
     return false unless valid?
 
     ActiveRecord::Base.transaction do
-      payment_request.assign_attributes(payment_request_attributes)
-      event.assign_attributes(payment_request:, payload: payment_request_attributes)
-      payment_request.save!
+      payment_request_record.assign_attributes(payload)
+      event.assign_attributes(payment_request_record: payment_request_record, payload: payload)
+      payment_request_record.save!
       event.save!
       event.publish!
     end
@@ -34,7 +34,7 @@ class PaymentRequestForm
 
   private
 
-  def payment_request_attributes
+  def payload
     {
       amount: amount.presence,
       currency_code: currency_code.presence,
