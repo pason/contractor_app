@@ -1,7 +1,7 @@
 module Publishable
   extend ActiveSupport::Concern
 
-  def publish!
+  def publish
     amqp.publish(event: self)
   end
 

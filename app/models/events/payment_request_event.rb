@@ -1,16 +1,9 @@
 module Events
   class PaymentRequestEvent < ApplicationRecord
-    self.table_name = 'payment_request_events'
-
-    belongs_to :payment_request_record, class_name: '::PaymentRequestRecord'
+    belongs_to :payment_request_record
 
     after_initialize do
-      self.event_type = event_type
-      self.payload ||= {}
-    end
-
-    def event_type
-      self.class.to_s.split('::').last
+      self.message_id ||= SecureRandom.uuid
     end
   end
 end

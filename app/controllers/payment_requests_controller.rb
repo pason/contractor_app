@@ -8,12 +8,11 @@ class PaymentRequestsController < ApplicationController
   def new; end
 
   def create
-    respond_to do |format|
-      if @payment_request_form.submit(payment_request_params)
-        format.html { redirect_to payment_requests_url, notice: 'Payment request was successfully created.' }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-      end
+    if @payment_request_form.submit(payment_request_params)
+       @event.publish
+      redirect_to payment_requests_url, notice: 'Payment request was successfully created.'
+    else
+      render :new, status: :unprocessable_entity
     end
   end
 
@@ -24,6 +23,8 @@ class PaymentRequestsController < ApplicationController
   end
 
   def set_payment_request_form
-    @payment_request_form = PaymentRequestForm.new
+    @payment_request_record = PaymentRequestRecord.new
+    @event = Events::PaymentRequest::Created.new
+    @payment_request_form = PaymentRequestForm.new(payment_request_record: @payment_request_record, event: @event)
   end
 end

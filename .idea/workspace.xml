@@ -8,18 +8,13 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/controllers/payment_requests_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/payment_requests_controller.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/forms/payment_request_form.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/forms/payment_request_form.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/jobs/application_job.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/jobs/application_job.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/models/concerns/publishable.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/concerns/publishable.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/models/events/payment_request_event.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/events/payment_request_event.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/payment_request.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/payment_request_record.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/services/amqp/consumer.rb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/services/amqp.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/services/amqp.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/services/amqp/base_publisher.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/services/amqp/base_publisher.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/services/amqp/publisher/topic.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/services/amqp/publisher/topic.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/payment_requests/_payment_request.json.jbuilder" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/payment_requests/index.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/payment_requests/index.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/payment_requests/index.json.jbuilder" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/workers/payment_requests/acceptance_worker.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/workers/payment_requests/acceptance_worker.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/workers/payment_requests/creation_worker.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/workers/payment_requests/creation_worker.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/workers/payment_requests/rejection_worker.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/workers/payment_requests/rejection_worker.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/migrate/20220531123048_create_payment_requests.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/migrate/20220531123048_create_payment_request_records.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/application.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/application.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db/migrate/20220602143925_create_payment_request_events.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/migrate/20220602143925_create_payment_request_events.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db/schema.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/schema.rb" afterDir="false" />
     </list>
@@ -63,8 +58,8 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/app/models/events" />
       <recent name="$PROJECT_DIR$/app/services/amqp" />
+      <recent name="$PROJECT_DIR$/app/models/events" />
     </key>
   </component>
   <component name="RunManager" selected="Rails.Development: contractor_app">
@@ -179,7 +174,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1653988137564</updated>
-      <workItem from="1653988139785" duration="60707000" />
+      <workItem from="1653988139785" duration="82667000" />
     </task>
     <servers />
   </component>

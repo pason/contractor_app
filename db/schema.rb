@@ -17,12 +17,14 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_02_143925) do
 
   create_table "payment_request_events", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.uuid "payment_request_record_id", null: false
-    t.string "event_type", null: false
+    t.string "type", null: false
     t.json "payload"
-    t.uuid "message_id", default: -> { "gen_random_uuid()" }
+    t.uuid "message_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["message_id"], name: "index_payment_request_events_on_message_id"
     t.index ["payment_request_record_id"], name: "index_payment_request_events_on_payment_request_record_id"
+    t.index ["type"], name: "index_payment_request_events_on_type"
   end
 
   create_table "payment_request_records", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|

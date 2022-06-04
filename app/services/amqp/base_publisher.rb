@@ -11,5 +11,9 @@ module Amqp
     def self.connection
       @connection ||= Connection.new
     end
+
+    def self.on_return_handler
+      @on_return_handler ||= OnReturnHandler.new(performer: UndeliveredMessagesRetryJob)
+    end
   end
 end

@@ -1,16 +1,15 @@
 class PaymentRequestForm
   include ActiveModel::Model
 
-  attr_accessor :amount, :currency_code, :description
-  attr_reader :payment_request_record, :event
+  attr_accessor :amount, :currency_code, :description, :payment_request_record, :event
 
   validates :amount, presence: true, numericality: { greater_than: 0, less_than: 1_000_000 }
   validates :currency_code, presence: true
   validates :description, presence: true
 
-  def initialize
-    @payment_request_record = PaymentRequestRecord.new
-    @event = Events::PaymentRequest::Created.new
+  def initialize(event:, payment_request_record:)
+    @payment_request_record = payment_request_record
+    @event = event
   end
 
   def submit(params = {})
@@ -22,13 +21,9 @@ class PaymentRequestForm
       event.assign_attributes(payment_request_record: payment_request_record, payload: payload)
       payment_request_record.save!
       event.save!
-      event.publish!
     end
+
   rescue ActiveRecord::RecordNotSaved, ActiveRecord::RecordInvalid
-    false
-  rescue Bunny::Exception => e
-    # Log notification to App Monitor tool
-    Rails.logger.error "Error: #{e}\n#{Kernel.caller.join("\n")}"
     false
   end
 
