@@ -11,7 +11,7 @@ module Amqp
                                                  properties:properties,
                                                  content: content)
       message_id = properties[:message_id]
-      performer.set(wait: 1.minute).perform_later(message_id)
+      performer.set(wait: 5.minutes).perform_later(message_id)
     end
 
     private

@@ -7,7 +7,7 @@
     <%= payment_request.description.truncate(25, omission: '...') %>
   </td>
   <td>
-    <%= payment_request.created_at.to_s(:long) %>
+    <%= payment_request.created_at.to_fs(:long) %>
   </td>
   <td>
     <i>

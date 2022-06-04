@@ -1,5 +1,9 @@
 require 'rails_helper'
 
-RSpec.describe PaymentRequest, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+RSpec.describe PaymentRequestRecord, type: :model do
+  describe "Validations" do
+    it { should validate_presence_of(:amount) }
+    it { should validate_presence_of(:currency_code) }
+    it { should validate_presence_of(:description) }
+  end
 end

@@ -14,4 +14,8 @@ class PaymentRequestRecord < ApplicationRecord
     Statuses::ACCEPTED => 20,
     Statuses::REJECTED => 30
   }
+
+  after_initialize do
+    self.guid ||= SecureRandom.uuid
+  end
 end

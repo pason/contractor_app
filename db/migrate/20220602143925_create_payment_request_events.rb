@@ -4,7 +4,7 @@ class CreatePaymentRequestEvents < ActiveRecord::Migration[7.0]
       t.belongs_to :payment_request_record, null: false, foreign_key: true, type: :uuid
       t.string :type, null: false, index: true
       t.json :payload
-      t.uuid :message_id, index: true
+      t.uuid :message_id
 
       t.timestamps
     end

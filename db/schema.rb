@@ -22,7 +22,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_02_143925) do
     t.uuid "message_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["message_id"], name: "index_payment_request_events_on_message_id"
     t.index ["payment_request_record_id"], name: "index_payment_request_events_on_payment_request_record_id"
     t.index ["type"], name: "index_payment_request_events_on_type"
   end
@@ -32,8 +31,10 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_02_143925) do
     t.string "currency_code", null: false
     t.text "description", null: false
     t.integer "status", default: 10, null: false
+    t.uuid "guid", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["guid"], name: "index_payment_request_records_on_guid"
   end
 
   add_foreign_key "payment_request_events", "payment_request_records"
