@@ -17,7 +17,7 @@ class PaymentRequestForm
     return false unless valid?
 
     ActiveRecord::Base.transaction do
-      payment_request_record.assign_attributes(payment_record_attributes)
+      payment_request_record.assign_attributes(payload)
       event.assign_attributes(payment_request_record: payment_request_record, payload: payload)
       payment_request_record.save!
       event.save!
@@ -29,15 +29,12 @@ class PaymentRequestForm
 
   private
 
-  def payment_record_attributes
+  def payload
     {
+      id: SecureRandom.hex,
       amount: amount.presence,
       currency_code: currency_code.presence,
       description: description.presence
     }
-  end
-
-  def payload
-    payment_record_attributes.merge(guid: payment_request_record.guid)
   end
 end

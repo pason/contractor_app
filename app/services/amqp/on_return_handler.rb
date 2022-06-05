@@ -8,7 +8,7 @@ module Amqp
 
     def call(return_info, properties, content)
       reporter.log('Got returned message', return_info: return_info,
-                                                 properties:properties,
+                                                 properties: properties,
                                                  content: content)
       message_id = properties[:message_id]
       performer.set(wait: 5.minutes).perform_later(message_id)

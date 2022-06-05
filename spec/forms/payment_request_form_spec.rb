@@ -19,7 +19,7 @@ RSpec.describe PaymentRequestForm, type: :form do
 
         event = Events::PaymentRequestEvent.last
         expect(event.event_type).to eq('created')
-        expect(event.payload).to eq(valid_attributes.stringify_keys.merge('guid' => event.payload['guid']))
+        expect(event.payload).to eq(valid_attributes.stringify_keys.merge('id' => event.payload['id']))
       end
       it 'creates a payment request record' do
         form = PaymentRequestForm.new(payment_request_record: PaymentRequestRecord.new,

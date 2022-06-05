@@ -5,29 +5,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d6c12a7b-b1c6-4cd8-93e9-9fa4e5f9986a" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spec/factories/payment_request_records.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/contractor_app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/contractor_app.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Gemfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/forms/payment_request_form.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/forms/payment_request_form.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/events/payment_request_event.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/events/payment_request_event.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/models/payment_request_record.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/payment_request_record.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/services/amqp.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/services/amqp.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/services/amqp/connection.rb" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/app/services/amqp/on_return_handler.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/services/amqp/on_return_handler.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/payment_requests/_payment_request.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/payment_requests/_payment_request.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/initializers/sneakers.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/initializers/sneakers.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/workers/payment_requests/acceptance_worker.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/workers/payment_requests/acceptance_worker.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/workers/payment_requests/creation_worker.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/workers/payment_requests/creation_worker.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/workers/payment_requests/rejection_worker.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/workers/payment_requests/rejection_worker.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db/migrate/20220531123048_create_payment_request_records.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/migrate/20220531123048_create_payment_request_records.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/migrate/20220602143925_create_payment_request_events.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/migrate/20220602143925_create_payment_request_events.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db/schema.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/schema.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spec/helpers/payment_requests_helper_spec.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/spec/models/payment_request_spec.rb" beforeDir="false" afterPath="$PROJECT_DIR$/spec/models/payment_request_spec.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spec/requests/payment_requests_spec.rb" beforeDir="false" afterPath="$PROJECT_DIR$/spec/requests/payment_requests_spec.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spec/routing/payment_requests_routing_spec.rb" beforeDir="false" afterPath="$PROJECT_DIR$/spec/routing/payment_requests_routing_spec.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spec/views/payment_requests/edit.html.erb_spec.rb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/spec/forms/payment_request_form_spec.rb" beforeDir="false" afterPath="$PROJECT_DIR$/spec/forms/payment_request_form_spec.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spec/rails_helper.rb" beforeDir="false" afterPath="$PROJECT_DIR$/spec/rails_helper.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spec/spec_helper.rb" beforeDir="false" afterPath="$PROJECT_DIR$/spec/spec_helper.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/spec/views/payment_requests/index.html.erb_spec.rb" beforeDir="false" afterPath="$PROJECT_DIR$/spec/views/payment_requests/index.html.erb_spec.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/spec/views/payment_requests/new.html.erb_spec.rb" beforeDir="false" afterPath="$PROJECT_DIR$/spec/views/payment_requests/new.html.erb_spec.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spec/views/payment_requests/show.html.erb_spec.rb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/spec/workers/acceptance_worker_spec.rb" beforeDir="false" afterPath="$PROJECT_DIR$/spec/workers/acceptance_worker_spec.rb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,6 +65,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/spec/services" />
       <recent name="$PROJECT_DIR$/app/services/amqp" />
       <recent name="$PROJECT_DIR$/app/models/events" />
     </key>
@@ -185,7 +182,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1653988137564</updated>
-      <workItem from="1653988139785" duration="102728000" />
+      <workItem from="1653988139785" duration="109474000" />
     </task>
     <servers />
   </component>

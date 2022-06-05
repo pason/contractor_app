@@ -8,7 +8,7 @@ module PaymentRequests
 
     def work_with_params(msg, _delivery_info, metadata)
       message_id = metadata[:message_id]
-      payload = ActiveSupport::JSON.decode(msg)
+      payload = ActiveSupport::JSON.decode(msg)&.with_indifferent_access
 
       event = Events::PaymentRequest::Created.new
       payment_request_record = PaymentRequestRecord.new

@@ -5,7 +5,6 @@ class CreatePaymentRequestRecords < ActiveRecord::Migration[7.0]
       t.string :currency_code, null: false
       t.text :description, null: false
       t.integer :status, null: false, default: 10
-      t.uuid :guid, null: false, index: true
 
       t.timestamps
     end

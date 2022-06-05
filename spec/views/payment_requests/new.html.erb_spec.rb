@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe 'payment_requests/new', type: :view do
   before(:each) do
     assign(:payment_request_form, PaymentRequestForm.new(
-      payment_request_record:   PaymentRequestRecord.new(amount: '9.99', currency_code: 'USD', description: 'MyText'),
+      payment_request_record: PaymentRequestRecord.new(amount: '9.99', currency_code: 'USD', description: 'MyText'),
       event: Events::PaymentRequest::Created.new
     ))
   end
