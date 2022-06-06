@@ -13,7 +13,8 @@ module PaymentRequests
 
       ActiveRecord::Base.transaction do
         payment_request_record = PaymentRequestRecord.find(payment_request_record_id)
-        Events::PaymentRequest::Rejected.create!(payment_request_record: payment_request_record, message_id: message_id)
+        Events::PaymentRequest::Rejected.create!(payment_request_record: payment_request_record,
+                                                 message_id: message_id)
         payment_request_record.rejected!
       end
 

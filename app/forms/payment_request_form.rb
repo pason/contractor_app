@@ -2,6 +2,7 @@ class PaymentRequestForm
   include ActiveModel::Model
 
   attr_accessor :amount, :currency_code, :description, :payment_request_record, :event
+  attr_reader :uuid
 
   validates :amount, presence: true, numericality: { greater_than: 0, less_than: 1_000_000 }
   validates :currency_code, presence: true
@@ -10,6 +11,7 @@ class PaymentRequestForm
   def initialize(event:, payment_request_record:)
     @payment_request_record = payment_request_record
     @event = event
+    @uuid = SecureRandom.uuid
   end
 
   def submit(params = {})
@@ -31,7 +33,7 @@ class PaymentRequestForm
 
   def payload
     {
-      id: SecureRandom.hex,
+      id: uuid.presence,
       amount: amount.presence,
       currency_code: currency_code.presence,
       description: description.presence

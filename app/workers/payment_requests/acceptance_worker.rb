@@ -10,9 +10,9 @@ module PaymentRequests
       payload = ActiveSupport::JSON.decode(msg)&.with_indifferent_access
       message_id = metadata[:message_id]
       payment_request_record_id = payload[:id]
-      payment_request_record = PaymentRequestRecord.find(payment_request_record_id)
-
+      
       ActiveRecord::Base.transaction do
+        payment_request_record = PaymentRequestRecord.find(payment_request_record_id)
         Events::PaymentRequest::Accepted.create!(payment_request_record: payment_request_record,
                                                  message_id: message_id)
         payment_request_record.accepted!

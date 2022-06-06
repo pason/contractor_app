@@ -8,7 +8,7 @@ RSpec.describe PaymentRequests::AcceptanceWorker, type: :worker do
       options = { routing_key: 'payment_request.accepted' }
 
       worker = PaymentRequests::AcceptanceWorker.new
-      worker.work_with_params(payload, options, { message_id: SecureRandom.hex })
+      worker.work_with_params(payload, options, { message_id: SecureRandom.uuid })
 
       payment_request.reload
       expect(payment_request.accepted?).to be_truthy
