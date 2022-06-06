@@ -13,7 +13,7 @@ module Amqp
     end
 
     def self.on_return_handler
-      @on_return_handler ||= OnReturnHandler.new(performer: UndeliveredMessagesRetryJob)
+      @on_return_handler ||= OnReturnHandler.new(performer: Config.on_return_performer.constantize)
     end
   end
 end

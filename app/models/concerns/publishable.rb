@@ -18,6 +18,6 @@ module Publishable
   private
 
   def amqp
-    @amqp ||= Amqp
+    @amqp ||= AmqpService
   end
 end

@@ -6,15 +6,17 @@
   <component name="ChangeListManager">
     <list default="true" id="d6c12a7b-b1c6-4cd8-93e9-9fa4e5f9986a" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/forms/payment_request_form.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/forms/payment_request_form.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/workers/payment_requests/acceptance_worker.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/workers/payment_requests/acceptance_worker.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/workers/payment_requests/creation_worker.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/workers/payment_requests/rejection_worker.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/workers/payment_requests/rejection_worker.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/routes.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spec/factories/events.rb" beforeDir="false" afterPath="$PROJECT_DIR$/spec/factories/events.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spec/workers/acceptance_worker_spec.rb" beforeDir="false" afterPath="$PROJECT_DIR$/spec/workers/acceptance_worker_spec.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spec/workers/creation_worker_spec.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/spec/workers/rejection_worker_spec.rb" beforeDir="false" afterPath="$PROJECT_DIR$/spec/workers/rejection_worker_spec.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/payment_requests_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/payment_requests_controller.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/concerns/publishable.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/concerns/publishable.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/services/amqp.rb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/services/amqp/base_publisher.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/amqp/base_publisher.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/services/amqp/config.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/amqp/config.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/services/amqp/connection.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/amqp/connection.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/services/amqp/on_return_handler.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/amqp/on_return_handler.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/services/amqp/publisher/topic.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/amqp/publisher/topic.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/initializers/amqp.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/initializers/amqp.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spec/services/amqp/config_spec.rb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/spec/services/amqp_spec.rb" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,7 +47,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/spec/lib" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -55,7 +57,14 @@
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/spec/lib" />
+      <recent name="$PROJECT_DIR$/spec/services" />
+      <recent name="$PROJECT_DIR$/app/services" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/lib" />
+      <recent name="$PROJECT_DIR$/app/lib" />
       <recent name="$PROJECT_DIR$/spec/services" />
       <recent name="$PROJECT_DIR$/app/services/amqp" />
       <recent name="$PROJECT_DIR$/app/models/events" />
@@ -154,7 +163,7 @@
       <option name="presentableId" value="Default" />
       <updated>1653988137564</updated>
       <workItem from="1653988139785" duration="110168000" />
-      <workItem from="1654448464141" duration="6636000" />
+      <workItem from="1654448464141" duration="8867000" />
     </task>
     <servers />
   </component>

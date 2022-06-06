@@ -1,6 +1,6 @@
 module Amqp
   class Config
-    mattr_accessor :app_id, :host, :port, :user, :pass
+    mattr_accessor :app_id, :host, :port, :user, :pass, :on_return_performer
 
     def self.config
       yield self

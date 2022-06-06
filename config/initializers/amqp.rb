@@ -1,4 +1,3 @@
-require 'amqp'
 require 'amqp/config'
 
 Amqp::Config.config do |config|
@@ -7,4 +6,5 @@ Amqp::Config.config do |config|
   config.user = 'guest'
   config.pass = 'guest'
   config.port = '5672'
+  config.on_return_performer = 'UndeliveredMessagesRetryJob'
 end

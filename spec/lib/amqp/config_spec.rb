@@ -4,7 +4,7 @@ RSpec.describe Amqp::Config, type: :service do
   describe 'class method' do
     it 'generates valid connection string' do
       Amqp::Config.config do |config|
-        config.app_id = 'contractor_app'
+        config.app_id = 'manager_app'
         config.host = '127.0.0.1'
         config.user = 'guest'
         config.pass = 'guest'
